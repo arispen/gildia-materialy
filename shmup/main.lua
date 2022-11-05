@@ -4,11 +4,8 @@ function love.load()
   enemy = love.graphics.newImage("shmup/enemy.png")
   playerX = 140
   playerY = 280
-  playerSpeed = 50
-  enemySpeed = 200
-  enemyY = 0
-  enemyX = 0
-  score = 0
+  playerSpeed, enemySpeed = 50, 200
+  enemyY, enemyX, score = 0, 0, 0
 end
 
 function love.update(dt)
@@ -26,7 +23,7 @@ function love.update(dt)
   end
   if math.abs(enemyX - playerX) < 30 
     and math.abs(enemyY - playerY) < 30 then
-    score = 0
+    score = 0 -- game over
   end
 end
 

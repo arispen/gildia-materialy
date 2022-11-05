@@ -1,1 +1,1 @@
-dofile("shmup/main.lua")
+dofile("wiedzmak/main.lua")
