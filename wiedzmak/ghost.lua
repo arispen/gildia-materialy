@@ -4,7 +4,7 @@ ghost.load = function ()
   ghost.x = tileSize * 10
   ghost.y = tileSize * 10
   ghost.image = love.graphics.newImage("wiedzmak/ghost.png")
-  ghost.life = 3
+  ghost.health = 3
 end
 
 ghost.move = function ()

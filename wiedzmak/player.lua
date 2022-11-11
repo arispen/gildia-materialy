@@ -7,6 +7,7 @@ player.load = function()
   player.sword = love.graphics.newImage("wiedzmak/sword.png")
   player.swordRotation = 10
   player.damage = 1
+  player.health = 3
 end
 
 player.move = function(key)
@@ -27,10 +28,10 @@ player.move = function(key)
       player.y = player.y + tileSize
     end
   end
-  if math.abs(player.x - potion.x) < tileSize or
+  if math.abs(player.x - potion.x) < tileSize and
     math.abs(player.y - potion.y) < tileSize then
-    if player.live then
-      player.life = player.life + potion.value
+    if potion.live then
+      player.health = player.health + potion.value
     end
     potion.live = false
   end
@@ -40,6 +41,6 @@ player.attack = function()
   player.swordRotation = 0
   if math.abs(player.x - ghost.x) < tileSize or
     math.abs(player.y - ghost.y) < tileSize then
-    ghost.life = ghost.life - player.damage
+    ghost.health = ghost.health - player.damage
   end
 end

@@ -34,11 +34,12 @@ end
 function love.draw()
   love.graphics.draw(map.image, 0, 0, 0, 2, 2)
   love.graphics.draw(player.image, player.x, player.y, 0, 2, 2)
-  if ghost.life > 0 then
+  if ghost.health > 0 then
     love.graphics.draw(ghost.image, ghost.x, ghost.y, 0, 2, 2)
   end
   if player.swordRotation < 1 then
     love.graphics.draw(player.sword, player.x + tileSize, player.y, player.swordRotation, 2, 2)
   end
   potion.draw()
+  love.graphics.print("LIFE: " .. player.health, 0, 0)
 end

@@ -11,8 +11,8 @@ end
 potion.update = function(dt)
   local spawnChance = 50
   if timer % spawnChance < 1 and potion.live == false then
-    local randomX = love.math.random(1, 10) * tileSize
-    local randomY = love.math.random(1, 10) * tileSize
+    local randomX = love.math.random(3, 7) * tileSize
+    local randomY = love.math.random(3, 7) * tileSize
     potion.x = randomX
     potion.y = randomY
     potion.live = true
