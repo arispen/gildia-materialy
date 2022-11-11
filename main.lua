@@ -1,0 +1,1 @@
+dofile("wiedzmak/main.lua")
