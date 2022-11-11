@@ -8,16 +8,15 @@ ghost.load = function ()
 end
 
 ghost.move = function ()
-  
-  if ghost.x > player.x then
+  if ghost.x > player.x + tileSize then
       ghost.x = ghost.x - tileSize
-  else
+  elseif ghost.x < player.x - tileSize then
     ghost.x = ghost.x + tileSize
   end
 
-  if ghost.y > player.y then
+  if ghost.y > player.y + tileSize then
     ghost.y = ghost.y - tileSize
-  else
+  elseif ghost.y < player.y - tileSize then
     ghost.y = ghost.y + tileSize
   end
 end
