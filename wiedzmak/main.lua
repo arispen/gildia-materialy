@@ -13,11 +13,17 @@ function love.load()
 end
 
 function love.update(dt)
+  local swordSpeed = 3
+  player.swordRotation = player.swordRotation + dt * swordSpeed
 end
 
 function love.keypressed(key, scancode, isrepeat)
-  player.move(key, player, map, tileSize)
-  ghost.move()
+  if key == "space" then
+    player.attack()
+  else
+    player.move(key)
+    ghost.move()
+  end
 end
 
 
@@ -25,4 +31,7 @@ function love.draw()
   love.graphics.draw(map.image, 0, 0, 0, 2, 2)
   love.graphics.draw(player.image, player.x, player.y, 0, 2, 2)
   love.graphics.draw(ghost.image, ghost.x, ghost.y, 0, 2, 2)
+  if player.swordRotation < 1 then
+    love.graphics.draw(player.sword, player.x + tileSize, player.y, player.swordRotation, 2, 2)
+  end
 end
