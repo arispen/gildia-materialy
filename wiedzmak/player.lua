@@ -8,6 +8,7 @@ player.load = function()
   player.swordRotation = 10
   player.damage = 1
   player.health = 3
+  player.attackSound = love.audio.newSource("wiedzmak/attackSound.ogg", "static")
 end
 
 player.move = function(key)
@@ -43,4 +44,5 @@ player.attack = function()
     math.abs(player.y - ghost.y) < tileSize then
     ghost.health = ghost.health - player.damage
   end
+  love.audio.play(player.attackSound)
 end

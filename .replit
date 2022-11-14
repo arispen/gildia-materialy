@@ -1,3 +1,6 @@
 run = "love ."
 
 entrypoint = "main.lua"
+
+# .replit
+audio = true
